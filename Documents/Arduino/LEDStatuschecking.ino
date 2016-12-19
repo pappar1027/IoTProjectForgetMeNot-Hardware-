@@ -10,6 +10,7 @@ int ledPin = 13;
 int lm35Pin = 0;
 const int DrawerLED=5;
 String inData="";
+String APIkey="xxxxxxxx" //api key given by thingspeak
 
 
 
@@ -83,7 +84,7 @@ void loop() {
   if(ser.find("Error")){
     Serial.println("AT+CIPsend error");}    
 delay(500);
-  ser.println("GET https://api.thingspeak.com/apps/thinghttp/send_request?api_key=WK4RHTZ9DZSOI42N"
+  ser.println("GET https://api.thingspeak.com/apps/thinghttp/send_request?api_key="+APIkey
  );
 
  delay(1500);
